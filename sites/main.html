@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+	<head>
+		<meta charset="utf-8" />
+		<title>Main</title>
+		<meta name="description" content="Simple JavaDevOrganizer client" />
+		<meta name="keywords" content="JavaDevOrganizer, client" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+			
+		<link href="https://fonts.googleapis.com/css?family=Lato:400,900&amp;subset=latin-ext" rel="stylesheet">	
+		<link rel="stylesheet" href="../styles/main_style.css" type="text/css" />
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
+		<script type="text/javascript" src="scripts/cookie_control.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+			
+				let firstName = readCookie("firstName");
+				let lastName = readCookie("lastName");
+				let email = readCookie("email");
+				let role = readCookie("role");
+				
+				$('#logout').click(function () {
+					deleteAllCookies();
+					window.location.replace("login.html");
+				});
+				
+				$(document ).ready(function() {
+					$( "#userInfo" ).append( firstName+" "+lastName);
+					
+					if(role==="ADMIN"){
+						setupAdmin();
+					}
+					
+					if(role === "LECTURER" || role==="ADMIN"){
+						setupLecturer();
+					}
+					
+					if(role==="STUDENT"){
+						setupStudent();
+					}
+				});
+				
+				function setupAdmin(){
+					$('.menu').append('<input id="controlLecturers" class="menuButton type="button" value="Wykładowcy" />');
+				}
+				
+				function setupLecturer(){
+					$('.menu').append('<input id="controlStudents" class="menuButton type="button" value="Studenci" />');
+					$('.menu').append('<input id="controlLectures" class="menuButton type="button" value="Zajęcia" />');
+				}
+				
+				function setupStudent(){
+				
+				}
+			});	
+		</script>
+	</head>
+
+	<body>
+		<div class="container">
+			<header class="logo">
+				<div class="title">JavaDevOrganizer</div>
+				<div class="menu">
+					<div id="userInfo" class="menuButton"></div>
+				</div>
+				<input id="logout" class="logout" type="button" value="Wyloguj" />
+
+			</header>
+			
+			<div class="main">
+			
+			</div>
+
+		</div>	
+		
+			<footer class="footer">
+				<span class="footerText">Made by Jakub Stanisławczyk</span>
+			</footer>	
+	</body>
+</html>

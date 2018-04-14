@@ -11,18 +11,29 @@ html, body
 
 .logo{
 	width: 80%;
-	height: 100px;
+	height: 90px;
 	border-bottom: 1px solid rgba(204,204,204,0.9);
 	margin-left: auto;
 	margin-right: auto;
 }
 
 .title{
+	float: left;
 	font-size: 65px;
 }
 
 .container{
 	flex: 1 0 auto;
+}
+
+.main{
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+	height: 100%;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	border: 1px solid rgba(204,204,204,0.9);
 }
 
 .footer{
@@ -41,4 +52,58 @@ html, body
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+}
+
+.menu{
+	float:left;
+	width: 55%;
+	margin-bottom: 20px;
+}
+
+.menuButton{
+	float:right;
+	width: 100px;
+	font-size:15px;
+	padding: 15px 5px;
+	margin-top: 20px;
+	outline: none;
+	border: none;
+	text-align: center;
+}
+
+.menuButton:hover{
+	color: #ff7626;
+	cursor: pointer;
+}
+
+.menuButton:first-child{
+	cursor: default;
+}
+
+.menuButton:first-child:hover{
+	cursor: default;
+	color: #000;
+}
+
+.logout{
+	float:right;
+	width: 120px;
+	background-color: #ff7626;
+	font-size:15px;
+	color: white;
+	padding: 15px 10px;
+	margin-top: 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	letter-spacing: 2px;
+	outline: none;
+}
+
+.logout:focus{
+	box-shadow: 0px 0px 15px 5px rgba(204,204,204,0.9);
+}
+
+.logout:hover{
+	background-color: #ff8737;
 }
