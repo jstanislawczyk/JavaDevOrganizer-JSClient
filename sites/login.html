@@ -11,6 +11,43 @@
 		<link rel="stylesheet" href="../styles/main_style.css" type="text/css" />
 		<link rel="stylesheet" href="../styles/login_style.css" type="text/css" />
 		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
+		<script type="text/javascript" src="scripts/cookie_control.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				
+				deleteAllCookies();
+				
+				$('#submit').click(function () {
+				
+					let email = document.querySelector("#email").value;
+					let password = document.querySelector("#password").value;
+					
+					deleteAllCookies();
+					
+					$.ajax({
+						url: 'http://localhost:8080/auth/checkUserData',
+						method: 'POST',
+						contentType: 'application/json',	
+						data: JSON.stringify({ "email": email}),				
+						dataType: 'json',
+						crossDomain: true,
+						beforeSend: function ( xhr ) {
+							xhr.setRequestHeader( 'Authorization', 'Basic ' + btoa( email+':'+password) );
+						},
+						error: function(){
+							console.log("error");
+						},
+						success: function( data, txtStatus, xhr ) {
+							createCookie(email, password, 7);		
+							console.log(document.cookie);
+							window.location.replace("main.html");
+						}
+					});
+				});    
+			});
+    </script>
+		
 	</head>
 
 	<body>
@@ -21,11 +58,9 @@
 
 			<div class="form">
 				<span>Logowanie</span>
-				<form>
-					<input type="text" placeholder="login" onfocus="this.placeholder=''" onblur="this.placeholder='login'" >
-					<input type="password" placeholder="hasło" onfocus="this.placeholder=''" onblur="this.placeholder='hasło'" >	
-					<input type="submit" value="Zaloguj się">	
-				</form>
+				<input id="email" type="text" placeholder="login" onfocus="this.placeholder=''" onblur="this.placeholder='login'" />
+				<input id="password" type="password" placeholder="hasło" onfocus="this.placeholder=''" onblur="this.placeholder='hasło'" />	
+				<input type="button" id="submit" class="submit" value="Zaloguj się"/>	
 			</div>
 		</div>	
 		
