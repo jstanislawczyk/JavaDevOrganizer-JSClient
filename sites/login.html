@@ -39,8 +39,10 @@
 							console.log("error");
 						},
 						success: function( data, txtStatus, xhr ) {
-							createCookie(email, password, 7);		
-							console.log(document.cookie);
+							createCookie("email", email, 7);		
+							createCookie("role", data.role, 7);	
+							createCookie("firstName", data.firstName, 7);	
+							createCookie("lastName", data.lastName, 7);	
 							window.location.replace("main.html");
 						}
 					});
