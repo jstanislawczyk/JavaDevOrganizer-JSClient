@@ -39,6 +39,7 @@
 							console.log("error");
 						},
 						success: function( data, txtStatus, xhr ) {
+							createCookie("id", data.id, 7);	
 							createCookie("email", email, 7);		
 							createCookie("role", data.role, 7);	
 							createCookie("password", password, 7);

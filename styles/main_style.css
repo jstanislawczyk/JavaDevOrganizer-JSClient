@@ -144,3 +144,38 @@ html, body
 .logout:hover{
 	background-color: #ff8737;
 }
+
+.registerPresenceButton{
+	border: 2px solid #f04141;
+	background-color: #FFC7C7;
+	border-radius: 50%;
+	height: 40px;
+	width: 40px;
+	color: #f04141;
+	font-size: 25px;
+	float: right;
+	cursor: pointer;
+}
+
+.disabledPresenceButton{
+	border: 2px solid #808080;
+	background-color: #CCC;
+	border-radius: 50%;
+	height: 40px;
+	width: 40px;
+	color: #808080;
+	font-size: 25px;
+	float: right;
+	cursor: pointer;
+}
+
+.registeredPresensceLabel{
+	border: 2px solid #00c809;
+	background-color: #D8F2CF;
+	border-radius: 50%;
+	height: 40px;
+	width: 40px;
+	color: #00c809;
+	font-size: 25px;
+	float: right;
+}
