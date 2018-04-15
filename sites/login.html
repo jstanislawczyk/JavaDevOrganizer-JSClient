@@ -44,7 +44,16 @@
 							createCookie("password", password, 7);
 							createCookie("firstName", data.firstName, 7);	
 							createCookie("lastName", data.lastName, 7);	
-							window.location.replace("main.html");
+							
+							if(data.role==="ADMIN"){
+								window.location.replace("admin.html");
+							}else if(data.role === "LECTURER"){
+								window.location.replace("lecturer.html");
+							}else if(data.role==="STUDENT"){
+								window.location.replace("student.html");
+							}else{
+								window.location.replace("login.html");
+							}
 						}
 					});
 				});    

@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+	<head>
+		<meta charset="utf-8" />
+		<title>Student</title>
+		<meta name="description" content="Simple JavaDevOrganizer client" />
+		<meta name="keywords" content="JavaDevOrganizer, client" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+			
+		<link href="https://fonts.googleapis.com/css?family=Lato:400,900&amp;subset=latin-ext" rel="stylesheet">	
+		<link rel="stylesheet" href="../styles/main_style.css" type="text/css" />
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
+		<script type="text/javascript" src="scripts/cookie_control.js"></script>
+		<script type="text/javascript" src="scripts/setup_student.js"></script>
+		<script type="text/javascript" src="scripts/role_control.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+			
+				let firstName = readCookie("firstName");
+				let lastName = readCookie("lastName");
+				let password = readCookie("password");
+				let email = readCookie("email");
+				let role = readCookie("role");
+				
+				$('#logout').click(function () {
+					deleteAllCookies();
+					window.location.replace("login.html");
+				});
+				
+				$(document ).ready(function() {
+					$("#userInfo").append( firstName+" "+lastName);
+					
+					if(role==="ADMIN"){
+						window.location.replace("admin.html");
+					}else if(role === "LECTURER"){
+						window.location.replace("lecturer.html");
+					}else if(role==="STUDENT"){
+						setupStudent(email, password);
+					}else{
+						window.location.replace("login.html");
+					}
+				});
+			});	
+		</script>
+	</head>
+
+	<body>
+		<div class="container">
+			<header class="logo">
+				<div class="title">JavaDevOrganizer</div>
+				<div class="menu">
+					<input id="logout" class="logout" type="button" value="Wyloguj" />
+					<div id="userInfo" class="menuButton"></div>		
+				</div>	
+
+			</header>
+			
+			<div class="main">
+				<div class="info">
+					<h3>Zajęcia JavaDev</h3>
+					<span>Zarejestruj swoją obecność na zajęciach</span>		
+				</div>
+			</div>
+
+		</div>	
+		
+			<footer class="footer">
+				<span class="footerText">Made by Jakub Stanisławczyk</span>
+			</footer>	
+	</body>
+</html>

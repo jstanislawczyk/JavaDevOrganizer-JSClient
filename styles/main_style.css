@@ -34,6 +34,7 @@ html, body
 	margin-top: 50px;
 	margin-bottom: 50px;
 	border: 1px solid rgba(204,204,204,0.9);
+	text-align: center;
 }
 
 .footer{
@@ -54,9 +55,45 @@ html, body
 	transform: translate(-50%, -50%);
 }
 
-.menu{
+
+.course{
+	margin: auto;
+	width: 60%;
+	border-bottom: 1px solid rgba(204,204,204,0.9);
+}
+
+.course:last-child{
+	margin-bottom: 50px;
+	border-bottom: none;
+}
+
+.info{
+	margin-bottom: 50px;
+}
+
+.courseName{
+	padding: 20px 10px 5px 10px;
+	font-size: 15px;
 	float:left;
+	width: 30%;
+	text-align: center;
+	min-height: 60px;
+	border-right: 3px solid rgba(204,204,204,0.9);
+}
+
+.courseDescription{
+	float: left;
+	text-align: center;
+	padding: 20px 10px 5px 15px;
 	width: 55%;
+	font-size: 15px;
+	text-align: left;
+	min-height: 60px;
+}
+
+.menu{
+	float:right;
+	width: 50%;
 	margin-bottom: 20px;
 }
 
