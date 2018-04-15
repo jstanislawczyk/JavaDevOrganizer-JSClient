@@ -41,6 +41,7 @@
 						success: function( data, txtStatus, xhr ) {
 							createCookie("email", email, 7);		
 							createCookie("role", data.role, 7);	
+							createCookie("password", password, 7);
 							createCookie("firstName", data.firstName, 7);	
 							createCookie("lastName", data.lastName, 7);	
 							window.location.replace("main.html");
