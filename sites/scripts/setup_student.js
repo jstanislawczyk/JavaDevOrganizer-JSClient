@@ -17,7 +17,7 @@ function setupStudent(email, password){
 				$('.main').append(
 					'<div class="course"><div class="courseName"><b>'+course.name
 					+'</b><br />'+course.date+'</div>'
-					+'<div class="courseDescription">'+course.description+'<input id="'+course.id+'" onclick="registerPresence(this.id, course.date)" class="registerPresenceButton" type="button" value="V"/>'+'</div><div style="clear: both"></div></div>');
+					+'<div class="courseDescription">'+course.description+'<input id="'+course.id+'" onclick="registerPresence(this.id,'+course.date+')" class="registerPresenceButton" type="button" value="V"/>'+'</div><div style="clear: both"></div></div>');
 			});
 			changeButtonsStatus(readCookie("id"), readCookie("email"), readCookie("password"));
 		}
@@ -41,12 +41,9 @@ function registerPresence(courseId, courseDate){
 			console.log("error");
 		},
 		success: function(txtStatus, xhr ) {
-			let today = new Date();
-			if(today.getDate<courseDate){
-				document.getElementById(courseId).classList.add('registeredPresensceLabel');
-				document.getElementById(courseId).classList.remove('registerPresenceButton');
-				document.getElementById(courseId).disabled = true;
-			}
+			document.getElementById(courseId).classList.add('registeredPresensceLabel');
+			document.getElementById(courseId).classList.remove('registerPresenceButton');
+			document.getElementById(courseId).disabled = true;	
 		}
 	});
 }
