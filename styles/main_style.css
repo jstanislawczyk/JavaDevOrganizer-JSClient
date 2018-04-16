@@ -166,7 +166,7 @@ html, body
 	color: #808080;
 	font-size: 25px;
 	float: right;
-	cursor: pointer;
+	cursor: default;
 }
 
 .registeredPresensceLabel{

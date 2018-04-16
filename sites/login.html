@@ -36,7 +36,7 @@
 							xhr.setRequestHeader( 'Authorization', 'Basic ' + btoa( email+':'+password) );
 						},
 						error: function(){
-							console.log("error");
+							 document.getElementById("errorInfo").style.display = "block";
 						},
 						success: function( data, txtStatus, xhr ) {
 							createCookie("id", data.id, 7);	
@@ -74,6 +74,7 @@
 				<input id="email" type="text" placeholder="login" onfocus="this.placeholder=''" onblur="this.placeholder='login'" />
 				<input id="password" type="password" placeholder="hasło" onfocus="this.placeholder=''" onblur="this.placeholder='hasło'" />	
 				<input type="button" id="submit" class="submit" value="Zaloguj się"/>	
+				<span id="errorInfo">Coś poszło nie tak :/</span>
 			</div>
 		</div>	
 		
