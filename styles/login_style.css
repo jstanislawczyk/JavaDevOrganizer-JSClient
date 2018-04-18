@@ -61,3 +61,10 @@ input[type=password]:focus
 	color: #ff0000;
 	display: none;
 }
+
+#successInfo{
+	margin-top: 3%;
+	text-align: center;
+	color: #62de39;
+	display: none;
+}

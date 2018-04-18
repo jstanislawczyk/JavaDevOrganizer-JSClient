@@ -1,3 +1,31 @@
+$(document).ready(function() {
+			
+	let firstName = readCookie("firstName");		
+	let lastName = readCookie("lastName");
+	let password = readCookie("password");
+	let email = readCookie("email");
+	let role = readCookie("role");
+				
+	$('#logout').click(function () {
+		deleteAllCookies();
+					window.location.replace("login.html");
+	});
+	
+	$(document ).ready(function() {
+		$("#userInfo").append( firstName+" "+lastName);
+		
+		if(role==="ADMIN"){
+			window.location.replace("admin.html");
+		}else if(role === "LECTURER"){
+			window.location.replace("lecturer.html");
+		}else if(role==="STUDENT"){
+			setupStudent(email, password);
+		}else{
+			window.location.replace("login.html");
+		}
+	});
+});
+
 function setupStudent(email, password){	
 	
 	$.ajax({

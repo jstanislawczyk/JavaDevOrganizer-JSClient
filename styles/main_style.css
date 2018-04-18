@@ -106,6 +106,7 @@ html, body
 	outline: none;
 	border: none;
 	text-align: center;
+	background-color: #FFF;
 }
 
 .menuButton:hover{
@@ -120,6 +121,22 @@ html, body
 .menuButton:first-child:hover{
 	cursor: default;
 	color: #000;
+}
+
+.menuInfo{
+	float:right;
+	width: 130px;
+	font-size:15px;
+	padding: 15px 5px;
+	margin-top: 20px;
+	outline: none;
+	border: none;
+	text-align: center;
+	color: #ff7626;
+}
+
+.menuInfo:hover{
+	cursor: default;
 }
 
 .logout{
@@ -178,4 +195,27 @@ html, body
 	color: #00c809;
 	font-size: 25px;
 	float: right;
+}
+
+.bigButton{
+	width: 200px;
+	background-color: #ff7626;
+	font-size:15px;
+	color: white;
+	padding: 15px 10px;
+	margin-top: 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	letter-spacing: 2px;
+	outline: none;
+	margin: 2% 5% 5% 5%;
+}
+
+.bigButton:focus{
+	box-shadow: 0px 0px 15px 5px rgba(204,204,204,0.9);
+}
+
+.bigButton:hover{
+	background-color: #ff8737;
 }

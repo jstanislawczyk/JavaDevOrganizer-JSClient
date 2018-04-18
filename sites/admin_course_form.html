@@ -2,7 +2,7 @@
 <html lang="pl">
 	<head>
 		<meta charset="utf-8" />
-		<title>Student</title>
+		<title>Admin</title>
 		<meta name="description" content="Simple JavaDevOrganizer client" />
 		<meta name="keywords" content="JavaDevOrganizer, client" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -12,7 +12,7 @@
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
 		<script type="text/javascript" src="scripts/cookie_control.js"></script>
-		<script type="text/javascript" src="scripts/setup_student.js"></script>
+		<script type="text/javascript" src="scripts/setup_admin.js"></script>
 	</head>
 
 	<body>
@@ -21,16 +21,20 @@
 				<div class="title">JavaDevOrganizer</div>
 				<div class="menu">
 					<input id="logout" class="logout" type="button" value="Wyloguj" />
-					<div id="userInfo" class="menuInfo"></div>		
+					<div id="userInfo" class="menuInfo"></div>
+					<input id="controlLecturers" class="menuButton" type="button" value="Utwórz"  onclick="location.href='admin.html';"/>
+					<input id="controlLecturers" class="menuButton" type="button" value="Użytkownicy"  onclick="location.href='admin_users.html';"/>
+					<input id="controlCourses" class="menuButton" type="button" value="Zajęcia" onclick="location.href='admin_courses.html';"/>	
 				</div>	
 
 			</header>
 			
 			<div class="main">
 				<div class="info">
-					<h3>Zajęcia JavaDev</h3>
-					<span>Zarejestruj swoją obecność na zajęciach</span>		
+					<h3>Utwórz obiekt</h3>		
 				</div>
+				<input class="bigButton" type="button" value="Utwórz użytkownika">
+				<input class="bigButton" type="button" value="Utwórz zajęcia">
 			</div>
 
 		</div>	

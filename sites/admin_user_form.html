@@ -9,6 +9,7 @@
 			
 		<link href="https://fonts.googleapis.com/css?family=Lato:400,900&amp;subset=latin-ext" rel="stylesheet">	
 		<link rel="stylesheet" href="../styles/main_style.css" type="text/css" />
+		<link rel="stylesheet" href="../styles/login_style.css" type="text/css" />
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
 		<script type="text/javascript" src="scripts/cookie_control.js"></script>
@@ -30,11 +31,17 @@
 			</header>
 			
 			<div class="main">
-				<div class="info">
-					<h3>Utwórz obiekt</h3>		
-				</div>
-				<input class="bigButton" type="button" value="Utwórz użytkownika" onclick="location.href='admin_user_form.html';">
-				<input class="bigButton" type="button" value="Utwórz zajęcia" onclick="location.href='admin_course_form.html';">
+				<div class="form">
+						<span>Utwórz użytkownika</span>
+						<input id="email" type="text" placeholder="email" onfocus="this.placeholder=''" onblur="this.placeholder='email" />
+						<input id="password" type="password" placeholder="hasło" onfocus="this.placeholder=''" onblur="this.placeholder='hasło'" />	
+						<input id="firstName" type="text" placeholder="imie" onfocus="this.placeholder=''" onblur="this.placeholder='imie'" />	
+						<input id="lastName" type="text" placeholder="nazwisko" onfocus="this.placeholder=''" onblur="this.placeholder='nazwisko'" />	
+						<input id="role" type="text" placeholder="rola" onfocus="this.placeholder=''" onblur="this.placeholder='rola'" />	
+						<input type="button" id="submit" class="submit" value="Utwórz"/>	
+						<span id="errorInfo">Coś poszło nie tak :/</span>
+						<span id="successInfo">Utworzono użytkownika</span>
+					</div>
 			</div>
 
 		</div>	
