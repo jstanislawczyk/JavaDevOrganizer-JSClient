@@ -33,11 +33,14 @@
 			<div class="main">
 				<div class="form">
 						<span>Utwórz użytkownika</span>
-						<input id="email" type="text" placeholder="email" onfocus="this.placeholder=''" onblur="this.placeholder='email" />
+						<input id="email" type="text" placeholder="email" onfocus="this.placeholder=''" onblur="this.placeholder='email'" />
 						<input id="password" type="password" placeholder="hasło" onfocus="this.placeholder=''" onblur="this.placeholder='hasło'" />	
 						<input id="firstName" type="text" placeholder="imie" onfocus="this.placeholder=''" onblur="this.placeholder='imie'" />	
 						<input id="lastName" type="text" placeholder="nazwisko" onfocus="this.placeholder=''" onblur="this.placeholder='nazwisko'" />	
-						<input id="role" type="text" placeholder="rola" onfocus="this.placeholder=''" onblur="this.placeholder='rola'" />	
+						<select class="select" id="role" name="nazwa">
+							<option value="STUDENT">Student</option>
+							<option value="LECTURER">Wykładowca</option>
+						</select>
 						<input type="button" id="submit" class="submit" value="Utwórz"/>	
 						<span id="errorInfo">Coś poszło nie tak :/</span>
 						<span id="successInfo">Utworzono użytkownika</span>

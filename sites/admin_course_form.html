@@ -9,10 +9,19 @@
 			
 		<link href="https://fonts.googleapis.com/css?family=Lato:400,900&amp;subset=latin-ext" rel="stylesheet">	
 		<link rel="stylesheet" href="../styles/main_style.css" type="text/css" />
+		<link rel="stylesheet" href="../styles/login_style.css" type="text/css" />
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
+		<link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+		<script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 		<script type="text/javascript" src="scripts/cookie_control.js"></script>
 		<script type="text/javascript" src="scripts/setup_admin.js"></script>
+		<script>
+        $(function() {
+            $( "#date" ).datepicker();
+            $( "#date" ).datepicker("hide");
+        });
+      </script>
 	</head>
 
 	<body>
@@ -30,11 +39,16 @@
 			</header>
 			
 			<div class="main">
-				<div class="info">
-					<h3>Utwórz obiekt</h3>		
-				</div>
-				<input class="bigButton" type="button" value="Utwórz użytkownika">
-				<input class="bigButton" type="button" value="Utwórz zajęcia">
+				<div class="form">
+						<span>Utwórz wykład</span>
+						<input id="name" type="text" placeholder="nazwa" onfocus="this.placeholder=''" onblur="this.placeholder='nazwa'" />
+						<textarea rows="4" id="description" placeholder="opis" onfocus="this.placeholder=''" onblur="this.placeholder='opis'" /></textarea>
+						<input id="date" type="text" placeholder="YYYY-MM-DD" onfocus="this.placeholder=''" onblur="this.placeholder='YYYY-MM-DD'" />	
+						<input type="button" id="submitCourse" class="submit" value="Utwórz"/>	
+						
+						<span id="errorInfo">Coś poszło nie tak :/</span>
+						<span id="successInfo">Utworzono wykład</span>
+					</div>
 			</div>
 
 		</div>	
