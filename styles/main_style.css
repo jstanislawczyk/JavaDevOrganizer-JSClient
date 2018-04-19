@@ -19,7 +19,7 @@ html, body
 
 .title{
 	float: left;
-	font-size: 65px;
+	font-size: 60px;
 }
 
 .container{
@@ -99,7 +99,7 @@ html, body
 
 .menuButton{
 	float:right;
-	width: 100px;
+	width: 90px;
 	font-size:15px;
 	padding: 15px 5px;
 	margin-top: 20px;
