@@ -140,7 +140,7 @@ $(document).ready(function() {
 		
 		if(dataCorrect){
 			$.ajax({
-				url: 'http://localhost:8080/course/create_course',
+				url: 'http://localhost:8080/course',
 				method: 'POST',
 				contentType: 'application/json',	
 				data: JSON.stringify(

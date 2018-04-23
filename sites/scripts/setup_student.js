@@ -29,7 +29,7 @@ $(document).ready(function() {
 function setupStudent(email, password){	
 	
 	$.ajax({
-		url: 'http://localhost:8080/course/show_all_courses',
+		url: 'http://localhost:8080/courses',
 		method: 'GET',
 		contentType: 'application/json',				
 		dataType: 'json',
