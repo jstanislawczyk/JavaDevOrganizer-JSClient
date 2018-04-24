@@ -10,7 +10,7 @@ $(document).ready(function() {
 					deleteAllCookies();
 					
 					$.ajax({
-						url: 'http://localhost:8080/auth/checkUserData',
+						url: 'http://localhost:8080/auth/user/data/check',
 						method: 'POST',
 						contentType: 'application/json',	
 						data: JSON.stringify({ "email": email}),				

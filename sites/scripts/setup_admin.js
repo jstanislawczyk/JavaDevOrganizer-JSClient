@@ -74,7 +74,7 @@ $(document).ready(function() {
 		
 		if(dataCorrect){
 			$.ajax({
-				url: 'http://localhost:8080/admin_control/create_user',
+				url: 'http://localhost:8080/admin/user',
 				method: 'POST',
 				contentType: 'application/json',	
 				data: JSON.stringify(

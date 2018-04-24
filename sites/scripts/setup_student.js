@@ -73,7 +73,7 @@ function registerPresence(courseId){
 	let userId = readCookie("id");
 	let password = readCookie("password");
 	let email = readCookie("email");
-	let url = 'http://localhost:8080/student/registerPresence?courseId='+courseId+'&userId='+userId;
+	let url = 'http://localhost:8080/student/register-presence?courseId='+courseId+'&userId='+userId;
 
 	$.ajax({
 		url: url,
@@ -96,7 +96,7 @@ function registerPresence(courseId){
 function changeButtonsStatus(userId, email, password){
 	
 	$.ajax({
-		url: 'http://localhost:8080/student/checkCoursesStatus/'+userId,
+		url: 'http://localhost:8080/student/'+userId+'/courses/ids',
 		method: 'GET',
 		contentType: 'application/json',				
 		dataType: 'json',
