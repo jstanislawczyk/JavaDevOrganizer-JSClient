@@ -166,35 +166,107 @@ html, body
 	border: 2px solid #f04141;
 	background-color: #FFC7C7;
 	border-radius: 50%;
-	height: 40px;
-	width: 40px;
+	height: 30px;
+	width: 30px;
 	color: #f04141;
-	font-size: 25px;
+	font-size: 20px;
 	float: right;
 	cursor: pointer;
+	padding:0;
+}
+
+.registeredPresenceButton{
+	border: 2px solid #00c809;
+	background-color: #D8F2CF;
+	color: #00c809;
+	border-radius: 50%;
+	height: 30px;
+	width: 30px;
+	font-size: 20px;
+	float: right;
+	margin-right: 5px;
+	padding:0;
+}
+
+.registeredAbsenceLabel{
+	border: 2px solid #f04141;
+	background-color: #FFC7C7;
+	color: #f04141;
+	border-radius: 50%;
+	height: 30px;
+	width: 30px;
+	font-size: 20px;
+	margin-right: 5px;
+	float: right;
+	margin-right: 5px;
+	padding:0;
+}
+
+.unregisteredAbsenceButton{
+	border: 2px solid #808080;
+	background-color: #CCC;
+	border-radius: 50%;
+	height: 30px;
+	width: 30px;
+	color: #808080;
+	font-size: 20px;
+	float: right;
+	margin-right: 5px;
+	cursor: pointer;
+	padding:0;
+}
+
+.unregisteredAbsenceButton:hover{
+	border: 2px solid #f04141;
+	background-color: #FFC7C7;
+	color: #f04141;
+}
+
+.unregisteredPresenceButton{
+	border: 2px solid #808080;
+	background-color: #CCC;
+	border-radius: 50%;
+	height: 30px;
+	width: 30px;
+	color: #808080;
+	font-size: 20px;
+	float: right;
+	margin-right: 5px;
+	padding:0;
+	cursor: pointer;
+}
+
+.unregisteredPresenceButton:hover{
+	border: 2px solid #00c809;
+	background-color: #D8F2CF;
+	color: #00c809;
 }
 
 .disabledPresenceButton{
 	border: 2px solid #808080;
 	background-color: #CCC;
 	border-radius: 50%;
-	height: 40px;
-	width: 40px;
+	height: 30px;
+	width: 30px;
 	color: #808080;
-	font-size: 25px;
+	font-size: 20px;
 	float: right;
 	cursor: default;
+	margin-right: 5px;
+	padding:0;
 }
 
-.registeredPresensceLabel{
+.registeredPresenceLabel{
 	border: 2px solid #00c809;
 	background-color: #D8F2CF;
 	border-radius: 50%;
-	height: 40px;
-	width: 40px;
+	height: 30px;
+	width: 30px;
 	color: #00c809;
-	font-size: 25px;
+	font-size: 20px;
+	margin-right: 5px;
 	float: right;
+	padding:0;
 }
 
 .bigButton{
