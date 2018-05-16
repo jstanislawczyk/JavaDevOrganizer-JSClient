@@ -173,6 +173,7 @@ html, body
 	float: right;
 	cursor: pointer;
 	padding:0;
+	margin-right: 5px;
 }
 
 .registeredPresenceButton{
