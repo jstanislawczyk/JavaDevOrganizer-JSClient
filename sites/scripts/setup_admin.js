@@ -74,7 +74,7 @@ $(document).ready(function() {
 		
 		if(dataCorrect){
 			$.ajax({
-				url: 'http://localhost:8080/admin/user',
+				url: 'http://localhost:8080/api/user',
 				method: 'POST',
 				contentType: 'application/json',	
 				data: JSON.stringify(
@@ -140,7 +140,7 @@ $(document).ready(function() {
 		
 		if(dataCorrect){
 			$.ajax({
-				url: 'http://localhost:8080/course',
+				url: 'http://localhost:8080/api/course',
 				method: 'POST',
 				contentType: 'application/json',	
 				data: JSON.stringify(

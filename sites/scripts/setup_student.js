@@ -52,7 +52,7 @@ function setupStudent(email, password){
 	});
 	
 	$.ajax({
-		url: 'http://localhost:8080/courses',
+		url: 'http://localhost:8080/api/courses',
 		method: 'GET',
 		contentType: 'application/json',				
 		dataType: 'json',

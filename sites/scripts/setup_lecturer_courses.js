@@ -8,7 +8,7 @@ $(document).ready(function() {
 	let email = readCookie("email");
 	
     $.ajax({
-		url: 'http://localhost:8080/courses',
+		url: 'http://localhost:8080/api/courses',
 		method: 'GET',
 		contentType: 'application/json',				
 		dataType: 'json',
@@ -50,7 +50,7 @@ $(document).ready(function() {
 function deleteCourse(courseId){
 	let password = readCookie("password");
 	let email = readCookie("email");
-	let url = 'http://localhost:8080/course/'+courseId;
+	let url = 'http://localhost:8080/api/course/'+courseId;
 
 	$.ajax({
 		url: url,
