@@ -1,11 +1,4 @@
-function setupLecturer(email, password){
-	
-}
-
 $(document).ready(function() {
-	
-	let password = readCookie("password");
-	let email = readCookie("email");
 	
     $.ajax({
 		url: 'http://localhost:8080/api/courses',
@@ -13,8 +6,8 @@ $(document).ready(function() {
 		contentType: 'application/json',				
 		dataType: 'json',
 		crossDomain: true,
-		beforeSend: function ( xhr ) {
-			xhr.setRequestHeader( 'Authorization', 'Basic ' + btoa( email+':'+password) );
+		beforeSend: function(request) {
+			request.setRequestHeader("Authorization", readCookie("token"));
 		},
 		error: function(){
 			console.log("error");
@@ -48,16 +41,15 @@ $(document).ready(function() {
 });
 
 function deleteCourse(courseId){
-	let password = readCookie("password");
-	let email = readCookie("email");
+	
 	let url = 'http://localhost:8080/api/course/'+courseId;
 
 	$.ajax({
 		url: url,
 		type: 'DELETE',
 		crossDomain: true,
-		beforeSend: function ( xhr ) {
-			xhr.setRequestHeader( 'Authorization', 'Basic ' + btoa( email+':'+password) );
+		beforeSend: function(request) {
+			request.setRequestHeader("Authorization", readCookie("token"));
 		},
 		error: function(){
 			console.log("error");

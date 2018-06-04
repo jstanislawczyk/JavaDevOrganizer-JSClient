@@ -13,35 +13,6 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
 		<script type="text/javascript" src="scripts/cookie_control.js"></script>
 		<script type="text/javascript" src="scripts/setup_lecturer.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function() {
-			
-				let firstName = readCookie("firstName");
-				let lastName = readCookie("lastName");
-				let password = readCookie("password");
-				let email = readCookie("email");
-				let role = readCookie("role");
-				
-				$('#logout').click(function () {
-					deleteAllCookies();
-					window.location.replace("login.html");
-				});
-				
-				$(document ).ready(function() {
-					$("#userInfo").append( firstName+" "+lastName);
-					
-					if(role==="ADMIN"){
-						window.location.replace("admin.html");
-					}else if(role === "LECTURER"){
-						setupLecturer(email, password);
-					}else if(role==="STUDENT"){
-						window.location.replace("student.html");
-					}else{
-						window.location.replace("login.html");
-					}
-				});
-			});	
-		</script>
 	</head>
 
 	<body>

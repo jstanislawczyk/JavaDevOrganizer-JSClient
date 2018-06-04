@@ -1,8 +1,9 @@
 $(document).ready(function() {
+		
+	setupAdmin();
 			
 	let firstName = readCookie("firstName");
 	let lastName = readCookie("lastName");
-	let password = readCookie("password");
 	let email = readCookie("email");
 	let role = readCookie("role");
 				
@@ -11,11 +12,9 @@ $(document).ready(function() {
 		window.location.replace("login.html");
 	});
 				
-	$(document ).ready(function() {
-		$("#userInfo").append( firstName+" "+lastName);
-					
+	$(document ).ready(function() {				
 		if(role==="ADMIN"){
-			setupAdmin(email, password);
+			console.log("Logged in as admin");
 		}else if(role === "LECTURER"){
 			window.location.replace("lecturer.html");
 		}else if(role==="STUDENT"){
@@ -26,15 +25,34 @@ $(document).ready(function() {
 	});
 });	
 
-function setupAdmin(email, password){	
-
+function setupAdmin(){	
+	var id = readCookie("id");
+	var url = 'http://localhost:8080/api/user/'+id;
+	
+	$.ajax({
+		url: url,
+		method: 'GET',
+		contentType: 'application/json',
+		crossDomain: true,
+		beforeSend: function(request) {
+			request.setRequestHeader("Authorization", readCookie("token"));
+		},
+		error: function(){
+			console.log("ERROR: admin site");
+		},
+		success: function(data, txtStatus, xhr ) {
+			createCookie("firstName", data.firstName, 7);
+			createCookie("lastName", data.lastName, 7);
+			
+			$("#userInfo").append(  readCookie("firstName")+" "+readCookie("lastName"));
+		}
+	});
 }
 
 $(document).ready(function() {
 	
 	$('#submit').click(function () {
 				
-		let password = readCookie("password");
 		let email = readCookie("email");
 		
 		let dataCorrect = true;
@@ -87,8 +105,8 @@ $(document).ready(function() {
 					}
 				),				
 				crossDomain: true,
-				beforeSend: function ( xhr ) {
-					xhr.setRequestHeader( 'Authorization', 'Basic ' + btoa( email+':'+password) );
+				beforeSend: function(request) {
+					request.setRequestHeader("Authorization", readCookie("token"));
 				},
 				error: function(){
 					document.getElementById("errorInfo").style.display = "block";
@@ -104,7 +122,6 @@ $(document).ready(function() {
 
 	$('#submitCourse').click(function () {
 				
-		let password = readCookie("password");
 		let email = readCookie("email");
 		
 		let dataCorrect = true;
@@ -151,8 +168,8 @@ $(document).ready(function() {
 					}
 				),				
 				crossDomain: true,
-				beforeSend: function ( xhr ) {
-					xhr.setRequestHeader( 'Authorization', 'Basic ' + btoa( email+':'+password) );
+				beforeSend: function(request) {
+					request.setRequestHeader("Authorization", readCookie("token"));
 				},
 				error: function(){
 					document.getElementById("errorInfo").style.display = "block";
